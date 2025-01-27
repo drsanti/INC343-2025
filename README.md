@@ -1,6 +1,6 @@
 # INC343-2025
 
-![system-architecture](./docs/system-architecture.png)
+![system-architecture](./docs/architecture.png)
 
 ---
 
