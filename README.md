@@ -1,5 +1,7 @@
 # INC343-2025
 
+![system-architecture](./docs/system-architecture.png)
+
 ---
 
 ### Front-End
