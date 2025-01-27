@@ -1,0 +1,25 @@
+module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime'
+    //** Lines below are used for electron */
+    // '@electron-toolkit/eslint-config-ts/recommended',
+    // '@electron-toolkit/eslint-config-prettier'
+  ],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+
+    'prettier/prettier': [
+      'error',
+      {
+        //** Disable "Delete `CR`"
+        endOfLine: 'auto',
+
+        //** Disable "Delete `;`"
+        semi: true
+      }
+    ]
+  }
+};

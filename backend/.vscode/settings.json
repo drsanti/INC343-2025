@@ -1,0 +1,20 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.fontFamily": " 'JetBrains Mono', 'Fira Code', 'Cascadia code', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "600",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.5,
+  "editor.autoIndent": "full",
+  "editor.tabSize": 2,
+
+  "editor.rulers": [100, 100],
+  "prettier.printWidth": 100,
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', 'Cascadia code', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.mouseWheelZoom": true,
+
+  "markdown.preview.fontSize": 16,
+  "editor.mouseWheelZoom": true,
+  "cSpell.words": []
+}

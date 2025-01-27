@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Show/Hide Configuration Files",
+			"icon": {
+				"id": "eye-watch",
+				"color": "terminal.ansiGreen"
+			},
+			"type": "shell",
+			"command": "python",
+			"args": ["${workspaceFolder}/tools/toggle_visibility.py"], // Correct path for Windows
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "silent", // Do not show the terminal
+				"close": true // Close the terminal after the task completes
+			},
+			"options": {
+				"cwd": "${workspaceFolder}" // Set the current working directory
+			}
+		}
+	]
+}
