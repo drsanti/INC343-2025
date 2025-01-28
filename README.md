@@ -8,7 +8,8 @@
 
 1. cd into `frontend` directory
 2. npm install (for first time only)
-3. npm run dev
+3. npm run dev (press CTRL+C to exit)
+4. Go to `src/examples/ex01-hello.tsx` and modify the code
 
 ---
 
