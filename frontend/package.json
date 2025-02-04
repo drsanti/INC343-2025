@@ -1,49 +1,39 @@
 {
-	"name": "inc-434",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"build": "tsc && vite build",
-		"start": "vite --port 4000",
-		"dev": "npm start",
-		"lint": "eslint -c .eslintrc.js src --ext ts --ext tsx",
-		"serve": "vite preview",
-		"test": "npm run test:compile && npm run test:unit",
-		"test:compile": "tsc --noEmit",
-		"test:unit": "vitest run",
-		"test:watch": "vitest",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"@babel/runtime": "^7.26.0",
-		"chroma.ts": "^1.0.10",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-gauge-chart": "^0.5.1",
-		"synaptic": "^1.1.4",
-		"three": "^0.169.0",
-		"three-nebula": "^10.0.3",
-		"three-nebula-types": "^1.0.1"
-	},
-	"devDependencies": {
-		"@types/chart.js": "^2.9.41",
-		"@types/node": "^22.10.1",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
-		"@types/synaptic": "^1.0.8",
-		"@typescript-eslint/eslint-plugin": "^8.12.1",
-		"@typescript-eslint/parser": "^8.12.1",
-		"@vitejs/plugin-react": "^4.3.3",
-		"autoprefixer": "^10.4.20",
-		"eslint": "^9.13.0",
-		"eslint-plugin-import": "^2.31.0",
-		"postcss": "^8.4.47",
-		"prettier": "^3.4.2",
-		"tailwindcss": "^3.4.14",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.6.3",
-		"vite": "^5.4.10",
-		"vitest": "^2.1.4"
-	}
+  "name": "testing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint:dot": "eslint .",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5"
+  }
 }

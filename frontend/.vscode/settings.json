@@ -1,0 +1,47 @@
+{
+  // Editor
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.fontWeight": "600",
+  "editor.mouseWheelZoom": true,
+
+  "editor.lineHeight": 1.35,
+  "editor.autoIndent": "full",
+  "editor.tabSize": 2,
+  "editor.rulers": [120, 120],
+
+  // Prettier
+  "prettier.printWidth": 120,
+
+  // Markdown
+  "markdown.preview.fontSize": 14,
+
+  // CSS
+  "css.lint.unknownAtRules": "ignore",
+
+  // Terminal
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "500",
+  "terminal.integrated.mouseWheelZoom": true,
+
+  // Default profile for Windows
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+  // Files exclude
+  "files.exclude": {
+    "**/**/*.json": false,
+    "**/**/*.js": false,
+    "**/**/.gitignore": false,
+    "**/**/postcss.config.js": false,
+    "**/**/.editorconfig": false,
+    "**/**/.eslintignore": false,
+    "**/**/.eslintrc.cjs": false,
+    "**/**/.prettierignore": false,
+    "**/**/.prettierrc.yaml": false,
+    "**/**/node_modules": false,
+    "**/**/tools": false,
+    "**/**/.vscode": false
+  }
+}
