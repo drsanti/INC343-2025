@@ -9,8 +9,8 @@ export const App = () => (
 /**----- Example 2: Using css file -----------------------------------*/
 // import './styles/ex01-hello.css';
 // export const App = () => (
-//   <div className="container">
-//     <div className="hello">Hello</div>
-//     <div className="inc343">INC343</div>
+//   <div className="wrapper">
+//     <div className="line1">Hello</div>
+//     <div className="line2">INC343</div>
 //   </div>
 // );

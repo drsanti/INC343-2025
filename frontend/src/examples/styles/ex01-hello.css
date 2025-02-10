@@ -1,11 +1,12 @@
-.container {
+@import 'tailwindcss';
+.wrapper {
   @apply flex flex-col items-center justify-center h-screen;
 }
 
-.header {
+.line1 {
   @apply text-4xl bg-green-600 w-full text-center;
 }
 
-.subheader {
+.line2 {
   @apply text-xl bg-yellow-800 w-full text-center;
 }
