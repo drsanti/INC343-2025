@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 //----------------------------------------------------
 
-import { App } from './ex02-basic';
+import { App } from './ex01-hello';
 
 //----------------------------------------------------
 const rootElement = document.getElementById('root');
