@@ -1,0 +1,15 @@
+const BOARD_IMAGE_WIDTH = 2048; // DO NOT CHANGED
+const BOARD_IMAGE_HEIGHT = 730; // DO NOT CHANGED
+const BOARD_GRID_NGX = 22; // DO NOT CHANGED
+const BOARD_GRID_NGY = 10; // DO NOT CHANGED
+
+const BOARD_SCALE = 0.7;
+
+export const config = {
+  board: {
+    width: BOARD_IMAGE_WIDTH * BOARD_SCALE,
+    height: BOARD_IMAGE_HEIGHT * BOARD_SCALE,
+    ngx: BOARD_GRID_NGX,
+    ngy: BOARD_GRID_NGY,
+  },
+};

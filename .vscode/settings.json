@@ -14,7 +14,7 @@
 	"terminal.integrated.mouseWheelZoom": true,
 	"markdown.preview.fontSize": 16,
 	"editor.mouseWheelZoom": true,
-	"cSpell.words": [],
+	"cSpell.words": ["psws", "UART"],
 	"files.exclude": {
 		"**/**/*.json": false,
 		"**/**/*.js": false,
