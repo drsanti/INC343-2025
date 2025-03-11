@@ -16,17 +16,21 @@
 	"editor.mouseWheelZoom": true,
 	"cSpell.words": ["psws", "UART"],
 	"files.exclude": {
-		"**/**/*.json": false,
-		"**/**/*.js": false,
-		"**/**/.gitignore": false,
-		"**/**/postcss.config.js": false,
-		"**/**/.editorconfig": false,
-		"**/**/.eslintignore": false,
-		"**/**/.eslintrc.cjs": false,
-		"**/**/.prettierignore": false,
-		"**/**/.prettierrc.yaml": false,
-		"**/**/node_modules": false,
-		"**/**/tools": false,
-		"**/**/.vscode": false
+		"**/**/*.json": true,
+		"**/**/*.js": true,
+		"**/**/.gitignore": true,
+		"**/**/postcss.config.js": true,
+		"**/**/.editorconfig": true,
+		"**/**/.eslintignore": true,
+		"**/**/.eslintrc.cjs": true,
+		"**/**/.prettierignore": true,
+		"**/**/.prettierrc.yaml": true,
+		"**/**/node_modules": true,
+		"**/**/tools": true,
+		"**/**/.vscode": false,
+		//
+		"frontend/src/examples/ternion": true,
+		"frontend/src/examples/app.tsx.bak": true,
+		"frontend/src/examples/app.ternion.tsx.bak": true
 	}
 }

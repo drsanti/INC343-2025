@@ -23,14 +23,14 @@ const colorProvider = (color: string) => {
   }
 };
 
-const Led = ({ color, state }: { color: string; state: boolean }) => {
+const Led = ({ color }: { color: string }) => {
   const colors = colorProvider(color);
   return (
     <div
       className="w-12 h-12 rounded-full"
       style={{
-        background: `radial-gradient(circle, ${state ? colors.light : colors.dark} 20%, ${colors.dark} 70%)`,
-        boxShadow: state ? `0 0 10px 4px ${colors.dark}` : `none`,
+        background: `radial-gradient(circle, ${colors.light} 20%, ${colors.dark} 70%)`,
+        boxShadow: `0 0 10px 4px ${colors.dark}`,
       }}
     ></div>
   );
@@ -39,10 +39,10 @@ const Led = ({ color, state }: { color: string; state: boolean }) => {
 export const App = () => {
   return (
     <div className="flex flex-row items-center justify-center mt-12 gap-8">
-      <Led color="red" state={false} />
-      <Led color="red" state={true} />
-      <Led color="green" state={false} />
-      <Led color="green" state={true} />
+      <Led color="red" />
+      <Led color="green" />
+      <Led color="yellow" />
+      <Led color="white" />
     </div>
   );
 };

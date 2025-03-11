@@ -127,10 +127,13 @@ export class TLed {
       clearInterval(this.timer);
       this.timer = null;
     } else {
-      this.timer = setInterval(() => {
-        this.state = !this.state;
-        this.update(this.state);
-      }, 500);
+      this.timer = setInterval(
+        () => {
+          this.state = !this.state;
+          this.update(this.state);
+        },
+        200 + Math.floor(Math.random() * 600),
+      );
     }
   }
 }

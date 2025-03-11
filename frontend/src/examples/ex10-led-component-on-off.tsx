@@ -30,7 +30,7 @@ const Led = ({ color, state }: { color: string; state: boolean }) => {
       className="w-12 h-12 rounded-full"
       style={{
         background: `radial-gradient(circle, ${state ? colors.light : colors.dark} 20%, ${colors.dark} 70%)`,
-        boxShadow: state ? `0 0 10px 4px ${colors.dark}` : `none`,
+        boxShadow: state ? `0 0 10px 4px ${colors.dark}` : 'none',
       }}
     ></div>
   );
@@ -39,10 +39,10 @@ const Led = ({ color, state }: { color: string; state: boolean }) => {
 export const App = () => {
   return (
     <div className="flex flex-row items-center justify-center mt-12 gap-8">
-      <Led color="red" state={false} />
-      <Led color="red" state={true} />
-      <Led color="green" state={false} />
-      <Led color="green" state={true} />
+      <Led color={'red'} state={false} />
+      <Led color={'green'} state={true} />
+      <Led color={'yellow'} state={false} />
+      <Led color={'white'} state={true} />
     </div>
   );
 };

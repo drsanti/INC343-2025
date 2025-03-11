@@ -3,7 +3,7 @@ const BOARD_IMAGE_HEIGHT = 730; // DO NOT CHANGED
 const BOARD_GRID_NGX = 22; // DO NOT CHANGED
 const BOARD_GRID_NGY = 10; // DO NOT CHANGED
 
-const BOARD_SCALE = 0.7;
+const BOARD_SCALE = 1;
 
 export const config = {
   board: {

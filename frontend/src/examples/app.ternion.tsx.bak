@@ -1,0 +1,14 @@
+/**
+ * TERNION Virtual Lab.
+ * (Digital Twin for Embedded Systems)
+ */
+
+import { TernionComponent, TernionContainer } from './ternion';
+
+export const App = () => {
+  return (
+    <TernionContainer>
+      <TernionComponent />
+    </TernionContainer>
+  );
+};

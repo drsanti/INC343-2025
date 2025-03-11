@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { TBoard } from './TBoard';
+import { TBoard } from '../TBoard';
 
-export const useTBoard = (callback?: (board: TBoard) => void) => {
+export const useTBoard = (
+  callback?: (board: TBoard) => void,
+  brightness: number = 100,
+) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const boardRef = useRef<TBoard | null>(null);
 
@@ -9,9 +12,10 @@ export const useTBoard = (callback?: (board: TBoard) => void) => {
     const container = containerRef.current; // Store initial ref value
 
     if (container) {
-      boardRef.current = new TBoard();
+      boardRef.current = new TBoard((ternion) => {
+        callback?.(ternion);
+      }, brightness);
       container.appendChild(boardRef.current.container);
-      callback?.(boardRef.current);
     }
 
     return () => {
@@ -22,7 +26,7 @@ export const useTBoard = (callback?: (board: TBoard) => void) => {
         }
       }
     };
-  }, [callback]);
+  }, [brightness, callback]);
 
   return containerRef;
 };

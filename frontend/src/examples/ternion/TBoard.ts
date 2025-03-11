@@ -21,6 +21,16 @@ class Leds extends TCanvas {
     super(config.board.width, config.board.height);
     this.grid = grid;
   }
+
+  public simulate() {
+    this.powLed?.blink();
+    this.usbStLeds.map((l) => l.blink());
+
+    this.usbIoLeds.map((l) => l.blink());
+    this.picLeds.map((l) => l.blink());
+    this.espLeds.map((l) => l.blink());
+  }
+
   public drawAllLeds() {
     console.log('drawAllLeds');
     this.drawPicLeds();
@@ -43,7 +53,6 @@ class Leds extends TCanvas {
     const led = new TLed(this, 'red', w, h, px, py);
     this.powLed = led;
     led.update(false);
-    led.blink();
   }
 
   private drawUsbStLeds() {
@@ -65,14 +74,14 @@ class Leds extends TCanvas {
       'yellow',
     ];
 
-    const ox = gx * 1.613;
+    const ox = gx * 1.62;
     const oy = gy * 3.16;
     ledTypes.map((t, i) => {
       const px = ox + (w + gap) * i - w / 2;
       const py = oy - h / 2;
       const led = new TLed(this, t, w, h, px, py);
+      this.usbStLeds.push(led);
       led.update(false);
-      led.blink();
     });
   }
 
@@ -94,14 +103,14 @@ class Leds extends TCanvas {
       'white',
     ];
 
-    const ox = gx * 1.613;
+    const ox = gx * 1.623;
     const oy = gy * 6.78;
     ledTypes.map((t, i) => {
       const px = ox + (w + gap) * i - w / 2;
       const py = oy - h / 2;
       const led = new TLed(this, t, w, h, px, py);
-      led.update(true);
-      led.blink();
+      this.usbIoLeds.push(led);
+      led.update(false);
     });
   }
 
@@ -122,7 +131,6 @@ class Leds extends TCanvas {
       const py = oy - h / 2;
       const led = new TLed(this, t, w, h, px, py);
       led.update(false);
-      led.blink();
       this.picLeds.push(led);
     });
   }
@@ -144,8 +152,7 @@ class Leds extends TCanvas {
       const yy = i < 2 ? 0 : gap * 0.68;
       const py = yy + oy - h / 2;
       const led = new TLed(this, t, w, h, px, py);
-      led.update(true);
-      led.blink();
+      led.update(false);
       this.espLeds.push(led);
     });
   }
@@ -177,7 +184,6 @@ class PSws extends TCanvas {
       const ox = i === 2 ? g.getGx() * -0.03 : 0;
       const psw = new TPsw(this, px + ox, py + oy, w, h);
       this.switches.push(psw);
-      console.log(this.switches);
     }
 
     // Mouse Click Event
@@ -214,8 +220,14 @@ export class TBoard extends TCanvas {
   private leds: Leds;
   private psws: PSws;
   public container: HTMLDivElement;
-  constructor() {
+  private img: HTMLImageElement;
+  private loadedCallback?: (ternion: TBoard) => void;
+  constructor(
+    loaded?: (ternion: TBoard) => void,
+    private brightness: number = 100,
+  ) {
     super(config.board.width, config.board.height);
+    this.loadedCallback = loaded;
     this.grid = new TGrids(config.board.ngx, config.board.ngy);
     this.leds = new Leds(this.grid);
     this.psws = new PSws(this.grid);
@@ -241,15 +253,26 @@ export class TBoard extends TCanvas {
     // Grid layer: click-through while still being visible,
     this.grid.div.style.pointerEvents = 'none';
 
-    const img = new Image();
-    img.src = `ternion.png`;
-    img.onload = () => {
-      const ctx = this.ctx;
-      ctx.drawImage(img!, 0, 0, this.width, this.height);
-      this.leds.drawAllLeds();
-      this.psws.drawAllSwitches();
+    this.img = new Image();
+    this.img.src = `ternion.png`;
+    this.img.onload = () => {
       // this.drawGrids();
+      this.init();
+      this.loadedCallback?.(this);
     };
+  }
+
+  private init() {
+    const ctx = this.ctx;
+    ctx.filter = `brightness(${this.brightness}%)`;
+    ctx.drawImage(this.img, 0, 0, this.width, this.height);
+    ctx.filter = 'none';
+    this.leds.drawAllLeds();
+    this.psws.drawAllSwitches();
+  }
+
+  simulate() {
+    this.leds.simulate();
   }
 
   public drawGrids() {
