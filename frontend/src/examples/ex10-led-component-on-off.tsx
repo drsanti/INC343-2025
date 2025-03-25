@@ -15,6 +15,11 @@ const colorProvider = (color: string) => {
         light: '#ffff00',
         dark: '#555500',
       };
+    case 'blue':
+      return {
+        light: '#0044ff',
+        dark: '#002277',
+      };
     default:
       return {
         light: '#ffffff',
@@ -39,10 +44,10 @@ const Led = ({ color, state }: { color: string; state: boolean }) => {
 export const App = () => {
   return (
     <div className="flex flex-row items-center justify-center mt-12 gap-8">
-      <Led color={'red'} state={false} />
+      <Led color={'red'} state={true} />
       <Led color={'green'} state={true} />
-      <Led color={'yellow'} state={false} />
-      <Led color={'white'} state={true} />
+      <Led color={'yellow'} state={true} />
+      <Led color={'blue'} state={true} />
     </div>
   );
 };
