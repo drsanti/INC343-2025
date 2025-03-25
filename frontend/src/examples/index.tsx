@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 //----------------------------------------------------
 
-import { App } from './ex10-led-component-on-off';
+import { App } from './ex11-using-led-component';
 
 //----------------------------------------------------
 const rootElement = document.getElementById('root');
