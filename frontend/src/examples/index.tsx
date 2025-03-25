@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 //----------------------------------------------------
 
-import { App } from './app';
+import { App } from './ex14-blinking-led-component';
 
 //----------------------------------------------------
 const rootElement = document.getElementById('root');

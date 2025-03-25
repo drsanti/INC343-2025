@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Led } from './components/LedComponent';
+import { Led } from './LedComponent';
 
 type BlinkingLedProps = {
   color: string;
@@ -12,20 +12,11 @@ export const BlinkingLed = (props: BlinkingLedProps) => {
   useEffect(() => {
     const tMs = 1000 / props.freq / 2;
     const timer = setInterval(() => {
-      setLedState((oldState) => !oldState);
+      setLedState((old) => !old);
     }, tMs);
     return () => {
       clearInterval(timer);
     };
-  }, [props]);
-
+  }, [props.freq]);
   return <Led color={props.color} state={ledState} />;
-};
-
-export const App = () => {
-  return (
-    <div className="flex flex-row items-center justify-center mt-12 gap-8">
-      <BlinkingLed color={'yellow'} initialState={true} freq={0.5} />
-    </div>
-  );
 };
