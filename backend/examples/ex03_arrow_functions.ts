@@ -1,5 +1,5 @@
 /**
- * File: ex04_arrow_function.ts
+ * File: ex03_arrow_function.ts
  *
  * Description: Demonstrates how to define and use arrow functions in Deno.
  * Arrow functions provide a concise syntax for writing functions in TypeScript.

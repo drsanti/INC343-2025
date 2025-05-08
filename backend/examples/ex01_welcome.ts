@@ -1,5 +1,5 @@
 /**
- * ex01_welcome.ts
+ * File: ex01_welcome.ts
  *
  * Use on of the following commands to run the script:
  *  - deno run ex01_welcome.ts

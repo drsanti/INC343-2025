@@ -1,5 +1,5 @@
 /**
- * File: math_utils.ts
+ * File: ex02_functions.ts
  *
  * Description: A simple module that provides basic math functions.
  */
