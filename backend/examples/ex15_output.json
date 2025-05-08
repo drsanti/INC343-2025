@@ -1,0 +1,10 @@
+{
+  "name": "Deno Learner",
+  "age": 25,
+  "isActive": true,
+  "skills": [
+    "TypeScript",
+    "Deno",
+    "Async"
+  ]
+}
