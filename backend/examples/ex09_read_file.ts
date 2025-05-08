@@ -12,7 +12,7 @@ const readFile = async (filename: string) => {
 		const content = await Deno.readTextFile(filename);
 		console.log("📄 File Content:\n", content);
 	} catch (error) {
-		console.error("❌ Error reading the file:", error.message);
+		console.error("❌ Error reading the file:", (error as Error).message);
 	}
 };
 

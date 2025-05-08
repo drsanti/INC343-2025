@@ -6,7 +6,7 @@
  */
 
 // Write a message to a text file
-const writeFile = async (filename, message) => {
+const writeFile = async (filename: string, message: string) => {
 	// Use Deno.writeTextFile to write the file
 	await Deno.writeTextFile(filename, message);
 };

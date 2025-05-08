@@ -28,5 +28,5 @@ try {
 	console.log("✅ Active:", data.isActive);
 	console.log("🛠️ Skills:", data.skills.join(", "));
 } catch (error) {
-	console.error("❌ Error reading or parsing the file:", error.message);
+	console.error("❌ Error reading or parsing the file:", (error as Error).message);
 }

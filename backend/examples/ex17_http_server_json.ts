@@ -28,10 +28,13 @@ const handler = async (_req: Request): Promise<Response> => {
 			headers: { "Content-Type": "application/json" },
 		});
 	} catch (error) {
-		return new Response(JSON.stringify({ error: "Failed to load data", details: error.message }), {
-			status: 500,
-			headers: { "Content-Type": "application/json" },
-		});
+		return new Response(
+			JSON.stringify({ error: "Failed to load data", details: (error as Error).message }),
+			{
+				status: 500,
+				headers: { "Content-Type": "application/json" },
+			}
+		);
 	}
 };
 

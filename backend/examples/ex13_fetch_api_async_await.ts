@@ -19,7 +19,7 @@ const fetchJoke = async () => {
 		const data = await response.json();
 		console.log("🤣 Random Joke:", data.value);
 	} catch (error) {
-		console.error("❌ Failed to fetch joke:", error.message);
+		console.error("❌ Failed to fetch joke:", (error as Error).message);
 	}
 };
 
